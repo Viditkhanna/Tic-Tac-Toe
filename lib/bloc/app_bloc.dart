@@ -1,7 +1,5 @@
 import 'dart:math';
-
 import 'package:flutter/cupertino.dart';
-import 'package:rxdart/rxdart.dart';
 
 enum Possibilities { X, O }
 
