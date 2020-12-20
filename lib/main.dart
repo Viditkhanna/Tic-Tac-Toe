@@ -5,13 +5,7 @@ import 'package:tic_tac_toe/ui/home/home_screen.dart';
 import 'bloc/app_bloc.dart';
 
 void main() {
-  final appBloc = AppBloc();
-  runApp(
-    MultiProvider(
-      providers: [ChangeNotifierProvider<AppBloc>.value(value: appBloc)],
-      child: MyApp(),
-    ),
-  );
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
