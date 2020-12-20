@@ -2,17 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:tic_tac_toe/bloc/app_bloc.dart';
 
-class HomeScreen extends StatefulWidget {
-  @override
-  _HomeScreenState createState() => _HomeScreenState();
-}
-
-class _HomeScreenState extends State<HomeScreen> {
-  @override
-  void initState() {
-    super.initState();
-  }
-
+class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height;
@@ -58,7 +48,6 @@ class _HomeScreenState extends State<HomeScreen> {
                         ? null
                         : () {
                             appBloc.playChance(1);
-                            setState(() {});
                           },
                     child: Container(
                       decoration: BoxDecoration(
@@ -84,7 +73,6 @@ class _HomeScreenState extends State<HomeScreen> {
                         ? null
                         : () {
                             appBloc.playChance(2);
-                            setState(() {});
                           },
                     child: Container(
                       decoration: BoxDecoration(
@@ -114,7 +102,6 @@ class _HomeScreenState extends State<HomeScreen> {
                         ? null
                         : () {
                             appBloc.playChance(3);
-                            setState(() {});
                           },
                     child: Container(
                       decoration: BoxDecoration(
@@ -140,7 +127,6 @@ class _HomeScreenState extends State<HomeScreen> {
                         ? null
                         : () {
                             appBloc.playChance(4);
-                            setState(() {});
                           },
                     child: Container(
                       decoration: BoxDecoration(
@@ -166,7 +152,6 @@ class _HomeScreenState extends State<HomeScreen> {
                         ? null
                         : () {
                             appBloc.playChance(5);
-                            setState(() {});
                           },
                     child: Container(
                       decoration: BoxDecoration(
@@ -196,7 +181,6 @@ class _HomeScreenState extends State<HomeScreen> {
                         ? null
                         : () {
                             appBloc.playChance(6);
-                            setState(() {});
                           },
                     child: Container(
                       decoration: BoxDecoration(
@@ -222,7 +206,6 @@ class _HomeScreenState extends State<HomeScreen> {
                         ? null
                         : () {
                             appBloc.playChance(7);
-                            setState(() {});
                           },
                     child: Container(
                       decoration: BoxDecoration(
@@ -248,7 +231,6 @@ class _HomeScreenState extends State<HomeScreen> {
                         ? null
                         : () {
                             appBloc.playChance(8);
-                            setState(() {});
                           },
                     child: Container(
                       decoration: BoxDecoration(
@@ -276,10 +258,5 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
       ),
     );
-  }
-
-  @override
-  void dispose() {
-    super.dispose();
   }
 }

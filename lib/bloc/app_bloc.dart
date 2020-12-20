@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/cupertino.dart';
 import 'package:rxdart/rxdart.dart';
 
@@ -18,22 +20,46 @@ class AppBloc with ChangeNotifier {
     return chances[index].isEmpty;
   }
 
-  void playChance(index, {isOpponent = false}) {
+  void playChance(index) {
     chances[index] = {
       'index': index,
       'date_time': currentTime,
-      'chance': isOpponent ? opponentChance : userChance,
+      'chance': userChance,
     };
     notifyListeners();
-    playOpponentChance();
+    if (!isGameCompleted()) _playOpponentChance();
   }
 
   String elementAt(index) {
     return map[chances[index]['chance']];
   }
 
-  void playOpponentChance() async {
-    await Future.delayed(Duration(milliseconds: 300));
+  bool isGameCompleted() {
+    for (var chance in chances) {
+      if (chance.isEmpty) return false;
+    }
+    return true;
+  }
 
+  void _playOpponentChance() async {
+    await Future.delayed(Duration(milliseconds: 300));
+    int index = _getValidRandomIndex();
+
+    chances[index] = {
+      'index': index,
+      'date_time': currentTime,
+      'chance': opponentChance,
+    };
+    notifyListeners();
+  }
+
+  int _getValidRandomIndex() {
+    final random = Random(0);
+    while (true) {
+      final randomNum = random.nextInt(9);
+      if (isEmptyAt(randomNum)) {
+        return randomNum;
+      }
+    }
   }
 }
