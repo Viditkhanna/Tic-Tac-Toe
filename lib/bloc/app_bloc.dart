@@ -10,17 +10,20 @@ class AppBloc with ChangeNotifier {
     Possibilities.X: 'X',
     Possibilities.O: 'O',
   };
-  final chances = List.generate(9, (index) => <String, dynamic>{});
+  final chances = [
+    [{}, {}, {}],
+    [{}, {}, {}],
+    [{}, {}, {}],
+  ];
 
   get currentTime => DateTime.now();
 
-  bool isEmptyAt(index) {
-    return chances[index].isEmpty;
+  bool isEmptyAt(x, y) {
+    return chances[x][y].isEmpty;
   }
 
-  void playChance(index) {
-    chances[index] = {
-      'index': index,
+  void playChance(x, y) {
+    chances[x][y] = {
       'date_time': currentTime,
       'chance': userChance,
     };
@@ -28,35 +31,38 @@ class AppBloc with ChangeNotifier {
     if (!isGameCompleted()) _playOpponentChance();
   }
 
-  String elementAt(index) {
-    return map[chances[index]['chance']];
+  String elementAt(x, y) {
+    return map[chances[x][y]['chance']];
   }
 
   bool isGameCompleted() {
     for (var chance in chances) {
-      if (chance.isEmpty) return false;
+      for (var c in chance) {
+        if (c.isEmpty) return false;
+      }
     }
     return true;
   }
 
   void _playOpponentChance() async {
     await Future.delayed(Duration(milliseconds: 300));
-    int index = _getValidRandomIndex();
-
-    chances[index] = {
-      'index': index,
+    List<int> indexes = _getValidRandomIndex();
+    final x = indexes[0];
+    final y = indexes[1];
+    chances[x][y] = {
       'date_time': currentTime,
       'chance': opponentChance,
     };
     notifyListeners();
   }
 
-  int _getValidRandomIndex() {
+  List<int> _getValidRandomIndex() {
     final random = Random(0);
     while (true) {
-      final randomNum = random.nextInt(9);
-      if (isEmptyAt(randomNum)) {
-        return randomNum;
+      final randomX = random.nextInt(3);
+      final randomY = random.nextInt(3);
+      if (isEmptyAt(randomX, randomY)) {
+        return [randomX, randomY];
       }
     }
   }

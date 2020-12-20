@@ -19,10 +19,10 @@ class HomeScreen extends StatelessWidget {
               Row(
                 children: [
                   InkWell(
-                    onTap: appBloc.isEmptyAt(0) == false
+                    onTap: appBloc.isEmptyAt(0, 0) == false
                         ? null
                         : () {
-                            appBloc.playChance(0);
+                            appBloc.playChance(0, 0);
                           },
                     child: Container(
                       decoration: BoxDecoration(
@@ -33,21 +33,21 @@ class HomeScreen extends StatelessWidget {
                       ),
                       height: width / 4,
                       width: width / 4,
-                      child: appBloc.isEmptyAt(0) == true
+                      child: appBloc.isEmptyAt(0, 0) == true
                           ? Container()
                           : Center(
                               child: Text(
-                                '${appBloc.elementAt(0)}',
+                                '${appBloc.elementAt(0, 0)}',
                                 style: textTheme.headline4,
                               ),
                             ),
                     ),
                   ),
                   InkWell(
-                    onTap: appBloc.isEmptyAt(1) == false
+                    onTap: appBloc.isEmptyAt(0, 1) == false
                         ? null
                         : () {
-                            appBloc.playChance(1);
+                            appBloc.playChance(0, 1);
                           },
                     child: Container(
                       decoration: BoxDecoration(
@@ -58,21 +58,21 @@ class HomeScreen extends StatelessWidget {
                       ),
                       height: width / 4,
                       width: width / 4,
-                      child: appBloc.isEmptyAt(1) == true
+                      child: appBloc.isEmptyAt(0, 1) == true
                           ? Container()
                           : Center(
                               child: Text(
-                                '${appBloc.elementAt(1)}',
+                                '${appBloc.elementAt(0, 1)}',
                                 style: textTheme.headline4,
                               ),
                             ),
                     ),
                   ),
                   InkWell(
-                    onTap: appBloc.isEmptyAt(2) == false
+                    onTap: appBloc.isEmptyAt(0, 2) == false
                         ? null
                         : () {
-                            appBloc.playChance(2);
+                            appBloc.playChance(0, 2);
                           },
                     child: Container(
                       decoration: BoxDecoration(
@@ -83,11 +83,11 @@ class HomeScreen extends StatelessWidget {
                       ),
                       height: width / 4,
                       width: width / 4,
-                      child: appBloc.isEmptyAt(2) == true
+                      child: appBloc.isEmptyAt(0, 2) == true
                           ? Container()
                           : Center(
                               child: Text(
-                                '${appBloc.elementAt(2)}',
+                                '${appBloc.elementAt(0, 2)}',
                                 style: textTheme.headline4,
                               ),
                             ),
@@ -98,10 +98,10 @@ class HomeScreen extends StatelessWidget {
               Row(
                 children: [
                   InkWell(
-                    onTap: appBloc.isEmptyAt(3) == false
+                    onTap: appBloc.isEmptyAt(1, 0) == false
                         ? null
                         : () {
-                            appBloc.playChance(3);
+                            appBloc.playChance(1, 0);
                           },
                     child: Container(
                       decoration: BoxDecoration(
@@ -112,21 +112,21 @@ class HomeScreen extends StatelessWidget {
                       ),
                       height: width / 4,
                       width: width / 4,
-                      child: appBloc.isEmptyAt(3) == true
+                      child: appBloc.isEmptyAt(1, 0) == true
                           ? Container()
                           : Center(
                               child: Text(
-                                '${appBloc.elementAt(3)}',
+                                '${appBloc.elementAt(1, 0)}',
                                 style: textTheme.headline4,
                               ),
                             ),
                     ),
                   ),
                   InkWell(
-                    onTap: appBloc.isEmptyAt(4) == false
+                    onTap: appBloc.isEmptyAt(1, 1) == false
                         ? null
                         : () {
-                            appBloc.playChance(4);
+                            appBloc.playChance(1, 1);
                           },
                     child: Container(
                       decoration: BoxDecoration(
@@ -137,21 +137,21 @@ class HomeScreen extends StatelessWidget {
                       ),
                       height: width / 4,
                       width: width / 4,
-                      child: appBloc.isEmptyAt(4) == true
+                      child: appBloc.isEmptyAt(1, 1) == true
                           ? Container()
                           : Center(
                               child: Text(
-                                '${appBloc.elementAt(4)}',
+                                '${appBloc.elementAt(1, 1)}',
                                 style: textTheme.headline4,
                               ),
                             ),
                     ),
                   ),
                   InkWell(
-                    onTap: appBloc.isEmptyAt(5) == false
+                    onTap: appBloc.isEmptyAt(1, 2) == false
                         ? null
                         : () {
-                            appBloc.playChance(5);
+                            appBloc.playChance(1, 2);
                           },
                     child: Container(
                       decoration: BoxDecoration(
@@ -162,11 +162,11 @@ class HomeScreen extends StatelessWidget {
                       ),
                       height: width / 4,
                       width: width / 4,
-                      child: appBloc.isEmptyAt(5) == true
+                      child: appBloc.isEmptyAt(1, 2) == true
                           ? Container()
                           : Center(
                               child: Text(
-                                '${appBloc.elementAt(5)}',
+                                '${appBloc.elementAt(1, 2)}',
                                 style: textTheme.headline4,
                               ),
                             ),
@@ -177,10 +177,10 @@ class HomeScreen extends StatelessWidget {
               Row(
                 children: [
                   InkWell(
-                    onTap: appBloc.isEmptyAt(6) == false
+                    onTap: appBloc.isEmptyAt(2, 0) == false
                         ? null
                         : () {
-                            appBloc.playChance(6);
+                            appBloc.playChance(2, 0);
                           },
                     child: Container(
                       decoration: BoxDecoration(
@@ -191,21 +191,21 @@ class HomeScreen extends StatelessWidget {
                       ),
                       height: width / 4,
                       width: width / 4,
-                      child: appBloc.isEmptyAt(6) == true
+                      child: appBloc.isEmptyAt(2, 0) == true
                           ? Container()
                           : Center(
                               child: Text(
-                                '${appBloc.elementAt(6)}',
+                                '${appBloc.elementAt(2, 0)}',
                                 style: textTheme.headline4,
                               ),
                             ),
                     ),
                   ),
                   InkWell(
-                    onTap: appBloc.isEmptyAt(7) == false
+                    onTap: appBloc.isEmptyAt(2, 1) == false
                         ? null
                         : () {
-                            appBloc.playChance(7);
+                            appBloc.playChance(2, 1);
                           },
                     child: Container(
                       decoration: BoxDecoration(
@@ -216,21 +216,21 @@ class HomeScreen extends StatelessWidget {
                       ),
                       height: width / 4,
                       width: width / 4,
-                      child: appBloc.isEmptyAt(7) == true
+                      child: appBloc.isEmptyAt(2, 1) == true
                           ? Container()
                           : Center(
                               child: Text(
-                                '${appBloc.elementAt(7)}',
+                                '${appBloc.elementAt(2, 1)}',
                                 style: textTheme.headline4,
                               ),
                             ),
                     ),
                   ),
                   InkWell(
-                    onTap: appBloc.isEmptyAt(8) == false
+                    onTap: appBloc.isEmptyAt(2, 2) == false
                         ? null
                         : () {
-                            appBloc.playChance(8);
+                            appBloc.playChance(2, 2);
                           },
                     child: Container(
                       decoration: BoxDecoration(
@@ -241,11 +241,11 @@ class HomeScreen extends StatelessWidget {
                       ),
                       height: width / 4,
                       width: width / 4,
-                      child: appBloc.isEmptyAt(8) == true
+                      child: appBloc.isEmptyAt(2, 2) == true
                           ? Container()
                           : Center(
                               child: Text(
-                                '${appBloc.elementAt(8)}',
+                                '${appBloc.elementAt(2, 2)}',
                                 style: textTheme.headline4,
                               ),
                             ),
