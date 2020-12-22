@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:tic_tac_toe/bloc/sound_bloc.dart';
+import 'package:tic_tac_toe/ui/home/widgets/game_over_dialog.dart';
 import 'package:tic_tac_toe/ui/home/widgets/loose_dialog.dart';
 import 'package:tic_tac_toe/ui/home/widgets/wonDialog.dart';
 import 'package:toast/toast.dart';
@@ -47,7 +48,7 @@ class AppBloc with ChangeNotifier {
     soundBloc.playUserSound();
     notifyListeners();
     if (isWon(x, y, userChance)) {
-      _showWonDialog(userChance);
+      _showDialog(userChance);
       return;
     }
     if (!_isGameCompleted()) _playOpponentChance();
@@ -63,6 +64,7 @@ class AppBloc with ChangeNotifier {
         if (c.isEmpty) return false;
       }
     }
+    _showDialog(null);
     return true;
   }
 
@@ -80,7 +82,7 @@ class AppBloc with ChangeNotifier {
     notifyListeners();
 
     if (isWon(x, y, opponentChance)) {
-      _showWonDialog(opponentChance);
+      _showDialog(opponentChance);
       return;
     }
   }
@@ -151,11 +153,13 @@ class AppBloc with ChangeNotifier {
     return true;
   }
 
-  _showWonDialog(Possibilities possibility) async {
+  _showDialog(Possibilities possibility) async {
     await showDialog(
         context: context,
         builder: (_) {
-          if (possibility == userChance) {
+          if (possibility == null)
+            return GameOverDialog();
+          else if (possibility == userChance) {
             return WonDialog();
           }
           return LooseDialog();
