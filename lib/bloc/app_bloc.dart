@@ -69,7 +69,6 @@ class AppBloc with ChangeNotifier {
 
   void _playOpponentChance() async {
     final soundBloc = Provider.of<SoundBloc>(_context, listen: false);
-    await Future.delayed(Duration(milliseconds: 300));
     List<int> indexes = _getValidRandomIndex();
     final x = indexes[0];
     final y = indexes[1];
@@ -77,8 +76,9 @@ class AppBloc with ChangeNotifier {
       'date_time': _currentTime,
       'chance': _opponentChance,
     };
-    soundBloc.playOpponentSound();
     notifyListeners();
+    await Future.delayed(Duration(milliseconds: 300));
+    soundBloc.playOpponentSound();
 
     if (isWon(x, y, _opponentChance)) {
       _showDialog(_opponentChance);

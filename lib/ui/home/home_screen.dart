@@ -9,7 +9,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
-        ChangeNotifierProvider<SoundBloc>.value(value: SoundBloc()),
+        ChangeNotifierProvider(create: (context) => SoundBloc()),
         ChangeNotifierProvider(create: (context) => AppBloc(context)),
       ],
       child: PlayGround(),
