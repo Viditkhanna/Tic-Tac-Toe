@@ -30,7 +30,7 @@ dependencies:
   cupertino_icons: ^1.0.0
   provider:
   toast:
-  sounds: ^0.9.3
+  audioplayers:
 
 dev_dependencies:
   flutter_test:

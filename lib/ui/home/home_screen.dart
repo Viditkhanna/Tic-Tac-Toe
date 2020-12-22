@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:tic_tac_toe/bloc/app_bloc.dart';
+import 'package:tic_tac_toe/bloc/sound_bloc.dart';
 import 'package:tic_tac_toe/ui/home/widgets/play_ground.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -8,7 +9,8 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
-        ChangeNotifierProvider<AppBloc>.value(value: AppBloc(context))
+        ChangeNotifierProvider<SoundBloc>.value(value: SoundBloc()),
+        ChangeNotifierProvider(create: (context)=>AppBloc(context),),
       ],
       child: PlayGround(),
     );

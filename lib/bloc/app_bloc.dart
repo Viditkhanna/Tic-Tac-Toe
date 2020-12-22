@@ -1,6 +1,8 @@
 import 'dart:math';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:tic_tac_toe/bloc/sound_bloc.dart';
 import 'package:tic_tac_toe/ui/home/widgets/loose_dialog.dart';
 import 'package:tic_tac_toe/ui/home/widgets/wonDialog.dart';
 import 'package:toast/toast.dart';
@@ -37,10 +39,12 @@ class AppBloc with ChangeNotifier {
   }
 
   void playChance(x, y) {
+    final soundBloc = Provider.of<SoundBloc>(context, listen: false);
     chances[x][y] = {
       'date_time': currentTime,
       'chance': userChance,
     };
+    soundBloc.playUserSound();
     notifyListeners();
     if (isWon(x, y, userChance)) {
       _showWonDialog(userChance);
@@ -63,6 +67,7 @@ class AppBloc with ChangeNotifier {
   }
 
   void _playOpponentChance() async {
+    final soundBloc = Provider.of<SoundBloc>(context, listen: false);
     await Future.delayed(Duration(milliseconds: 300));
     List<int> indexes = _getValidRandomIndex();
     final x = indexes[0];
@@ -71,6 +76,7 @@ class AppBloc with ChangeNotifier {
       'date_time': currentTime,
       'chance': opponentChance,
     };
+    soundBloc.playOpponentSound();
     notifyListeners();
 
     if (isWon(x, y, opponentChance)) {
