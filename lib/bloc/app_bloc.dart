@@ -16,13 +16,19 @@ class AppBloc with ChangeNotifier {
     Possibilities.X: 'X',
     Possibilities.O: 'O',
   };
-  final chances = [
-    [{}, {}, {}],
-    [{}, {}, {}],
-    [{}, {}, {}],
-  ];
+  var chances;
 
-  AppBloc(this.context);
+  AppBloc(this.context) {
+    init();
+  }
+
+  init() {
+    chances = [
+      [{}, {}, {}],
+      [{}, {}, {}],
+      [{}, {}, {}],
+    ];
+  }
 
   get currentTime => DateTime.now();
 
@@ -68,7 +74,7 @@ class AppBloc with ChangeNotifier {
     notifyListeners();
 
     if (isWon(x, y, opponentChance)) {
-      _showWonDialog(userChance);
+      _showWonDialog(opponentChance);
       return;
     }
   }
@@ -148,12 +154,7 @@ class AppBloc with ChangeNotifier {
           }
           return LooseDialog();
         });
-
-    for (var chance in chances) {
-      for (var c in chance) {
-        c = {};
-      }
-    }
+    init();
     notifyListeners();
   }
 }
