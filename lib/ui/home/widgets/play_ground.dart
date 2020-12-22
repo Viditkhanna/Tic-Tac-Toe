@@ -19,7 +19,7 @@ class PlayGround extends StatelessWidget {
               Row(
                 children: [
                   InkWell(
-                    onTap: appBloc.isEmptyAt(0, 0) == false
+                    onTap: !appBloc.isEmptyAt(0, 0)
                         ? null
                         : () {
                             appBloc.playChance(0, 0);
@@ -27,13 +27,19 @@ class PlayGround extends StatelessWidget {
                     child: Container(
                       decoration: BoxDecoration(
                         border: Border(
-                          right: BorderSide(width: 1.0, color: Colors.white),
-                          bottom: BorderSide(width: 1.0, color: Colors.white),
+                          right: BorderSide(
+                            width: 1.0,
+                            color: Colors.white,
+                          ),
+                          bottom: BorderSide(
+                            width: 1.0,
+                            color: Colors.white,
+                          ),
                         ),
                       ),
                       height: width / 4,
                       width: width / 4,
-                      child: appBloc.isEmptyAt(0, 0) == true
+                      child: appBloc.isEmptyAt(0, 0)
                           ? Container()
                           : Center(
                               child: Text(
@@ -44,7 +50,7 @@ class PlayGround extends StatelessWidget {
                     ),
                   ),
                   InkWell(
-                    onTap: appBloc.isEmptyAt(0, 1) == false
+                    onTap: !appBloc.isEmptyAt(0, 1)
                         ? null
                         : () {
                             appBloc.playChance(0, 1);
@@ -52,13 +58,19 @@ class PlayGround extends StatelessWidget {
                     child: Container(
                       decoration: BoxDecoration(
                         border: Border(
-                          right: BorderSide(width: 1.0, color: Colors.white),
-                          bottom: BorderSide(width: 1.0, color: Colors.white),
+                          right: BorderSide(
+                            width: 1.0,
+                            color: Colors.white,
+                          ),
+                          bottom: BorderSide(
+                            width: 1.0,
+                            color: Colors.white,
+                          ),
                         ),
                       ),
                       height: width / 4,
                       width: width / 4,
-                      child: appBloc.isEmptyAt(0, 1) == true
+                      child: appBloc.isEmptyAt(0, 1)
                           ? Container()
                           : Center(
                               child: Text(
@@ -69,7 +81,7 @@ class PlayGround extends StatelessWidget {
                     ),
                   ),
                   InkWell(
-                    onTap: appBloc.isEmptyAt(0, 2) == false
+                    onTap: !appBloc.isEmptyAt(0, 2)
                         ? null
                         : () {
                             appBloc.playChance(0, 2);
@@ -77,13 +89,19 @@ class PlayGround extends StatelessWidget {
                     child: Container(
                       decoration: BoxDecoration(
                         border: Border(
-                          left: BorderSide(width: 0.0, color: Colors.white),
-                          bottom: BorderSide(width: 1.0, color: Colors.white),
+                          left: BorderSide(
+                            width: 0.0,
+                            color: Colors.white,
+                          ),
+                          bottom: BorderSide(
+                            width: 1.0,
+                            color: Colors.white,
+                          ),
                         ),
                       ),
                       height: width / 4,
                       width: width / 4,
-                      child: appBloc.isEmptyAt(0, 2) == true
+                      child: appBloc.isEmptyAt(0, 2)
                           ? Container()
                           : Center(
                               child: Text(
@@ -98,7 +116,7 @@ class PlayGround extends StatelessWidget {
               Row(
                 children: [
                   InkWell(
-                    onTap: appBloc.isEmptyAt(1, 0) == false
+                    onTap: !appBloc.isEmptyAt(1, 0)
                         ? null
                         : () {
                             appBloc.playChance(1, 0);
@@ -106,13 +124,19 @@ class PlayGround extends StatelessWidget {
                     child: Container(
                       decoration: BoxDecoration(
                         border: Border(
-                          right: BorderSide(width: 1.0, color: Colors.white),
-                          bottom: BorderSide(width: 1.0, color: Colors.white),
+                          right: BorderSide(
+                            width: 1.0,
+                            color: Colors.white,
+                          ),
+                          bottom: BorderSide(
+                            width: 1.0,
+                            color: Colors.white,
+                          ),
                         ),
                       ),
                       height: width / 4,
                       width: width / 4,
-                      child: appBloc.isEmptyAt(1, 0) == true
+                      child: appBloc.isEmptyAt(1, 0)
                           ? Container()
                           : Center(
                               child: Text(
@@ -123,7 +147,7 @@ class PlayGround extends StatelessWidget {
                     ),
                   ),
                   InkWell(
-                    onTap: appBloc.isEmptyAt(1, 1) == false
+                    onTap: !appBloc.isEmptyAt(1, 1)
                         ? null
                         : () {
                             appBloc.playChance(1, 1);
@@ -131,13 +155,19 @@ class PlayGround extends StatelessWidget {
                     child: Container(
                       decoration: BoxDecoration(
                         border: Border(
-                          right: BorderSide(width: 1.0, color: Colors.white),
-                          bottom: BorderSide(width: 1.0, color: Colors.white),
+                          right: BorderSide(
+                            width: 1.0,
+                            color: Colors.white,
+                          ),
+                          bottom: BorderSide(
+                            width: 1.0,
+                            color: Colors.white,
+                          ),
                         ),
                       ),
                       height: width / 4,
                       width: width / 4,
-                      child: appBloc.isEmptyAt(1, 1) == true
+                      child: appBloc.isEmptyAt(1, 1)
                           ? Container()
                           : Center(
                               child: Text(
@@ -148,7 +178,7 @@ class PlayGround extends StatelessWidget {
                     ),
                   ),
                   InkWell(
-                    onTap: appBloc.isEmptyAt(1, 2) == false
+                    onTap: !appBloc.isEmptyAt(1, 2)
                         ? null
                         : () {
                             appBloc.playChance(1, 2);
@@ -156,13 +186,19 @@ class PlayGround extends StatelessWidget {
                     child: Container(
                       decoration: BoxDecoration(
                         border: Border(
-                          left: BorderSide(width: 0.0, color: Colors.white),
-                          bottom: BorderSide(width: 1.0, color: Colors.white),
+                          left: BorderSide(
+                            width: 0.0,
+                            color: Colors.white,
+                          ),
+                          bottom: BorderSide(
+                            width: 1.0,
+                            color: Colors.white,
+                          ),
                         ),
                       ),
                       height: width / 4,
                       width: width / 4,
-                      child: appBloc.isEmptyAt(1, 2) == true
+                      child: appBloc.isEmptyAt(1, 2)
                           ? Container()
                           : Center(
                               child: Text(
@@ -177,7 +213,7 @@ class PlayGround extends StatelessWidget {
               Row(
                 children: [
                   InkWell(
-                    onTap: appBloc.isEmptyAt(2, 0) == false
+                    onTap: !appBloc.isEmptyAt(2, 0)
                         ? null
                         : () {
                             appBloc.playChance(2, 0);
@@ -185,13 +221,19 @@ class PlayGround extends StatelessWidget {
                     child: Container(
                       decoration: BoxDecoration(
                         border: Border(
-                          top: BorderSide(width: 0.0, color: Colors.white),
-                          right: BorderSide(width: 1.0, color: Colors.white),
+                          top: BorderSide(
+                            width: 0.0,
+                            color: Colors.white,
+                          ),
+                          right: BorderSide(
+                            width: 1.0,
+                            color: Colors.white,
+                          ),
                         ),
                       ),
                       height: width / 4,
                       width: width / 4,
-                      child: appBloc.isEmptyAt(2, 0) == true
+                      child: appBloc.isEmptyAt(2, 0)
                           ? Container()
                           : Center(
                               child: Text(
@@ -202,7 +244,7 @@ class PlayGround extends StatelessWidget {
                     ),
                   ),
                   InkWell(
-                    onTap: appBloc.isEmptyAt(2, 1) == false
+                    onTap: !appBloc.isEmptyAt(2, 1)
                         ? null
                         : () {
                             appBloc.playChance(2, 1);
@@ -210,13 +252,19 @@ class PlayGround extends StatelessWidget {
                     child: Container(
                       decoration: BoxDecoration(
                         border: Border(
-                          top: BorderSide(width: 0.0, color: Colors.white),
-                          right: BorderSide(width: 1.0, color: Colors.white),
+                          top: BorderSide(
+                            width: 0.0,
+                            color: Colors.white,
+                          ),
+                          right: BorderSide(
+                            width: 1.0,
+                            color: Colors.white,
+                          ),
                         ),
                       ),
                       height: width / 4,
                       width: width / 4,
-                      child: appBloc.isEmptyAt(2, 1) == true
+                      child: appBloc.isEmptyAt(2, 1)
                           ? Container()
                           : Center(
                               child: Text(
@@ -227,7 +275,7 @@ class PlayGround extends StatelessWidget {
                     ),
                   ),
                   InkWell(
-                    onTap: appBloc.isEmptyAt(2, 2) == false
+                    onTap: !appBloc.isEmptyAt(2, 2)
                         ? null
                         : () {
                             appBloc.playChance(2, 2);
@@ -235,13 +283,19 @@ class PlayGround extends StatelessWidget {
                     child: Container(
                       decoration: BoxDecoration(
                         border: Border(
-                          left: BorderSide(width: 0.0, color: Colors.white),
-                          top: BorderSide(width: 0.0, color: Colors.white),
+                          left: BorderSide(
+                            width: 0.0,
+                            color: Colors.white,
+                          ),
+                          top: BorderSide(
+                            width: 0.0,
+                            color: Colors.white,
+                          ),
                         ),
                       ),
                       height: width / 4,
                       width: width / 4,
-                      child: appBloc.isEmptyAt(2, 2) == true
+                      child: appBloc.isEmptyAt(2, 2)
                           ? Container()
                           : Center(
                               child: Text(
