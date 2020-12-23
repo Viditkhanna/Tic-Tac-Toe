@@ -137,14 +137,30 @@ class AppBloc with ChangeNotifier {
   }
 
   bool _isDiagonalWon(Possibilities possibility) {
-    final list = [
+    final rightDiagonal = [
       [0, 0],
       [1, 1],
       [2, 2],
     ];
-    for (var element in list) {
+    final leftDiagonal = [
+      [0, 2],
+      [1, 1],
+      [2, 0],
+    ];
+    bool isWon = true;
+    for (var element in rightDiagonal) {
       int x = element[0];
       int y = element[1];
+      if (_chances[x][y]['chance'] != possibility) {
+        isWon = false;
+      }
+    }
+    if (isWon) return true;
+    for (var element in leftDiagonal) {
+      int x = element[0];
+      int y = element[1];
+      print('element at $x,$y');
+      print(possibility);
       if (_chances[x][y]['chance'] != possibility) {
         return false;
       }
